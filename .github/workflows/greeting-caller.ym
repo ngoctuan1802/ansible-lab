@@ -1,0 +1,14 @@
+name: Call Reusable Greeting Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      actor:
+        description: "The person who will receive the greeting"
+        required: true
+
+jobs:
+  call-greeting:
+    uses: ngoctuan1802/uda-github-actions/.github/workflows/greeting_template.yml
+    with:
+      actor: ${{ inputs.actor }}
