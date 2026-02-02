@@ -1,7 +1,7 @@
 - hosts: aws
   become: true
 
-  task:
+  tasks:
   - name: Ping
     ping:
     register: ping_output
