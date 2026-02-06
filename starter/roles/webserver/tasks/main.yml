@@ -8,10 +8,6 @@
     name: ufw
     state: started
 
-- name: Enable ufw
-  ufw:
-    state: enabled
-
 - name: Open HTTP port on Ubuntu
   ufw:
     rule: allow
