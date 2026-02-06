@@ -8,13 +8,16 @@
     name: ufw
     state: started
 
-- name: Open port
+- name: Enable ufw
   ufw:
-    port: "{{ web_port }}/tcp"
+    state: enabled
+
+- name: Open HTTP port on Ubuntu
+  ufw:
+    rule: allow
+    port: "{{ web_port }}"
     proto: tcp
-    permanent: true
-    immediate: true
-    
+
 - name: Install apache
   package:
     name: "{{ package }}"
