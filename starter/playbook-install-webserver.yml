@@ -1,4 +1,4 @@
-- host: aws
+- hosts: aws
   become: true
   roles:
     - webserver
