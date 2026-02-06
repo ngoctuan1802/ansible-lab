@@ -1,16 +1,16 @@
 - name: Install firewalld
   package:
-    name: "firewalld"
+    name: "ufw"
     state: present
 
 - name: Start firewalld
   service:
-    name: firewalld
+    name: ufw
     state: started
 
 - name: Open port
-  firewalld:
-    port: "{{ port }}/tcp"
+  ufw:
+    port: "{{ web_port }}/tcp"
     state: enabled
     permanent: true
     immediate: true
