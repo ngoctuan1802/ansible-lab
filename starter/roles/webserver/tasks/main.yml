@@ -11,10 +11,10 @@
 - name: Open port
   ufw:
     port: "{{ web_port }}/tcp"
-    state: enabled
+    proto: tcp
     permanent: true
     immediate: true
-
+    
 - name: Install apache
   package:
     name: "{{ package }}"
